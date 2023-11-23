@@ -10,6 +10,8 @@
 }
 body{
     font-size: large;
+    justify-content: center;
+    align-items: center;
 }
 header{
     display: flex;
@@ -127,6 +129,7 @@ header{
 .contenedor{
     display: flex;
     justify-content: center;
+    position: relative;
 }
 nav{
     background-color: darkgoldenrod;
@@ -156,4 +159,44 @@ section{
     object-fit: cover;
     border-radius: 5px;
     scroll-snap-align: center;
+}
+.carrusel{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+}
+.elemento{
+    flex: 1 0 auto;
+    margin: 0 50px;
+    background-color: red;
+    width: 500px;
+    height: 500px;
+}
+  @keyframes moverImagen {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(50px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .animacion-imagen {
+    animation: moverImagen 4s ease-in-out infinite;
+  }
+  #contenedor {
+    position: relative;
+}
+
+#video, #imagen {
+    width: 100%;
+    height: auto;
+    position: absolute;
+}
+
+#video {
+    z-index: 1; /* Asegura que el video esté encima de la imagen */
 }
